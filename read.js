@@ -31,11 +31,11 @@ async function main() {
 
         // Find up to 5 listings with at least 4 bedrooms and at least 2 bathrooms
         // If you recently ran create.js, a listing named Beautiful Beach House should be included in the results 
-        await findListingsWithMinimumBedroomsBathroomsAndMostRecentReviews(client, {
+        /*await findListingsWithMinimumBedroomsBathroomsAndMostRecentReviews(client, {
             minimumNumberOfBedrooms: 4,
             minimumNumberOfBathrooms: 2,
             maximumNumberOfResults: 5
-        });
+        });*/
 
     } finally {
         // Close the connection to the MongoDB cluster
@@ -53,7 +53,7 @@ main().catch(console.error);
  */
 async function findOneListingByName(client, nameOfListing) {
     // See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#findOne for the findOne() docs
-    const result = await client.db("Cluster0").collection("-1001425546590").findOne({ file_name: nameOfListing });
+    const result = await client.db("Cluster0").collection("-1001425546590").findOne({"file_name": nameOfListing });
 
     if (result) {
         console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
