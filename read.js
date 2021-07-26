@@ -23,7 +23,7 @@ async function main() {
         // Make the appropriate DB calls
 
         // Find the listing named "Infinite Views" that we created in create.js
-        await findOneListingByName(client, "avengers");
+        await findOneListingByName(client, "\\bavengers\\b");
 
         // Find up to 5 listings with at least 4 bedrooms and at least 2 bathrooms
         // If you recently ran create.js, a listing named Beautiful Beach House should be included in the results 
