@@ -14,7 +14,6 @@ async function main() {
      * pass option { useUnifiedTopology: true } to the MongoClient constructor.
      * const client =  new MongoClient(uri, {useUnifiedTopology: true})
      */
-    const client = new MongoClient(uri);
 
     try {
         // Connect to the MongoDB cluster
@@ -48,8 +47,11 @@ main().catch(console.error);
  * @param {String} nameOfListing The name of the listing you want to find
  */
 async function findOneListingByName(client, nameOfListing) {
+    const client = new MongoClient(uri);
+    const mydb = client[DATABASE_NAME];
+    const mycol = mydb[-1001272450387];
     // See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#findOne for the findOne() docs
-    const result = await client.db("Cluster0").collection("-1001272450387").find({ "file_name": nameOfListing });
+    const result = await mycol.find( {"file_name": nameOfListing} );
 
     if (result) {
         console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
