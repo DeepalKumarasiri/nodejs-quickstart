@@ -8,7 +8,7 @@ async function main() {
      * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
      * See https://docs.mongodb.com/drivers/node/ for more details
      */
-    const uri = "mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.wujnj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://Gamy_Gamin:<password>@cluster0.8djms.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
     /**
      * The Mongo Client you will use to interact with your database
@@ -26,7 +26,7 @@ async function main() {
         // Make the appropriate DB calls
 
         // Find the listing named "Infinite Views" that we created in create.js
-        await findOneListingByName(client, "Infinite Views");
+        await findOneListingByName(client, "Puriyatha");
 
         // Find up to 5 listings with at least 4 bedrooms and at least 2 bathrooms
         // If you recently ran create.js, a listing named Beautiful Beach House should be included in the results 
@@ -52,7 +52,7 @@ main().catch(console.error);
  */
 async function findOneListingByName(client, nameOfListing) {
     // See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#findOne for the findOne() docs
-    const result = await client.db("Adv_Auto_Filter").collection("-1001272450387").find({ "file_name": nameOfListing });
+    const result = await client.db("Cluster0").collection("-1001425546590").find({ "file_name": nameOfListing });
 
     if (result) {
         console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
