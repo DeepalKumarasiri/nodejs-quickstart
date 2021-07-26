@@ -8,7 +8,7 @@ async function main() {
      * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
      * See https://docs.mongodb.com/drivers/node/ for more details
      */
-    const uri = "mongodb+srv://<username>:<password>@<your-cluster-url>/sample_airbnb?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.wujnj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
     /**
      * The Mongo Client you will use to interact with your database
@@ -52,7 +52,7 @@ main().catch(console.error);
  */
 async function findOneListingByName(client, nameOfListing) {
     // See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#findOne for the findOne() docs
-    const result = await client.db("Cluster0").collection("-1001272450387").find({ "file_name": nameOfListing });
+    const result = await client.db("Adv_Auto_Filter").collection("-1001272450387").find({ "file_name": nameOfListing });
 
     if (result) {
         console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
