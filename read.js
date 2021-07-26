@@ -49,7 +49,7 @@ main().catch(console.error);
  */
 async function findOneListingByName(client, nameOfListing) {
     // See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#findOne for the findOne() docs
-    const result = await client.db("Cluster0").collection("-1001272450387").findOne({ "file_name": nameOfListing });
+    const result = await client.db("Cluster0").collection("-1001272450387").find({ "file_name": nameOfListing });
 
     if (result) {
         console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
