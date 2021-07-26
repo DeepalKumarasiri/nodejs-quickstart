@@ -1,6 +1,7 @@
     //const uri = "mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.wujnj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     //const mydb = client["Cluster0"];
     //const mycol = mydb[-1001272450387];
+    //mongodb+srv://Gamy_Gamin:Gamy_Gamin@cluster0.8djms.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 const { MongoClient } = require('mongodb');
 
 async function main() {
@@ -52,7 +53,7 @@ main().catch(console.error);
  */
 async function findOneListingByName(client, nameOfListing) {
     // See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#findOne for the findOne() docs
-    const result = await client.db("Cluster0").collection("-1001425546590").find({ "file_name": nameOfListing });
+    const result = await client.db("Cluster0").collection("-1001425546590").findOne({ file_name: nameOfListing });
 
     if (result) {
         console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
